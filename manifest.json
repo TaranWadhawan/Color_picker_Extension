@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Advanced Color Picker",
+  "version": "1.0",
+  "description": "An advanced color picker with separated RGB values, HSL conversion, contrast check, and history.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+    // "default_icon": "icon.png"
+  }
+//   "icons": {
+//     "128": "icon.png"
+//   }
+}

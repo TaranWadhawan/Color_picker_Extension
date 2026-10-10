@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Color Picker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header/Action Section -->
+        <header>
+            <h2>Color Picker</h2>
+            <button id="pick-btn" class="primary-btn">
+                <svg viewBox="0 0 24 24" class="icon">
+                    <path
+                        d="M17.41 2C16.14 2 14.88 2.49 13.91 3.46L4.41 12.96C3.93 13.44 3.65 14.07 3.65 14.75C3.65 15.43 3.93 16.06 4.41 16.54L7.46 19.59C7.94 20.07 8.57 20.35 9.25 20.35C9.93 20.35 10.56 20.07 11.04 19.59L20.54 10.09C22.5 8.14 22.5 4.96 20.54 3C19.68 2.33 18.54 2 17.41 2M17.41 4C18.04 4 18.68 4.19 19.13 4.64C20.08 5.59 20.08 7.16 19.13 8.11L18 9.24L14.76 6L15.89 4.87C16.3 4.3 16.85 4 17.41 4M13.34 7.41L16.59 10.66L8.44 18.81C8.36 18.89 8.24 18.94 8.12 18.94H6.06V16.88C6.06 16.76 6.11 16.64 6.19 16.56L13.34 7.41Z" />
+                </svg>
+                Pick Color
+            </button>
+        </header>
+
+        <!-- Preview Box -->
+        <div class="preview-card">
+            <div id="color-preview" class="color-preview"></div>
+            <div class="preview-info">
+                <span id="hex-display">#000000</span>
+                <span id="contrast-badge" class="badge">Contrast Ratio: 21:1</span>
+            </div>
+        </div>
+
+        <!-- Separated RGB Values -->
+        <section class="section">
+            <label class="section-title">Separated RGB Channels</label>
+            <div class="rgb-grid">
+                <div class="channel-box red">
+                    <span class="channel-label">R</span>
+                    <span id="r-val" class="channel-value">0</span>
+                </div>
+                <div class="channel-box green">
+                    <span class="channel-label">G</span>
+                    <span id="g-val" class="channel-value">0</span>
+                </div>
+                <div class="channel-box blue">
+                    <span class="channel-label">B</span>
+                    <span id="b-val" class="channel-value">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Formats -->
+        <section class="section">
+            <label class="section-title">Formats</label>
+            <div class="format-group">
+                <div class="input-row">
+                    <span class="format-label">HEX</span>
+                    <input type="text" id="hex-input" readonly value="#000000">
+                    <button class="copy-btn" data-target="hex-input" title="Copy">Copy</button>
+                </div>
+                <div class="input-row">
+                    <span class="format-label">RGB</span>
+                    <input type="text" id="rgb-input" readonly value="rgb(0, 0, 0)">
+                    <button class="copy-btn" data-target="rgb-input" title="Copy">Copy</button>
+                </div>
+                <div class="input-row">
+                    <span class="format-label">HSL</span>
+                    <input type="text" id="hsl-input" readonly value="hsl(0, 0%, 0%)">
+                    <button class="copy-btn" data-target="hsl-input" title="Copy">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility/Contrast Check -->
+        <section class="section">
+            <label class="section-title">Text Readability Suggestion</label>
+            <div class="accessibility-row">
+                <div class="readability-box" id="white-text-box" style="background: #000; color: #FFF;">
+                    White Text
+                </div>
+                <div class="readability-box" id="black-text-box" style="background: #000; color: #000;">
+                    Black Text
+                </div>
+            </div>
+        </section>
+
+        <!-- Color History -->
+        <section class="section">
+            <div class="history-header">
+                <span class="section-title">Recent Colors</span>
+                <button id="clear-history" class="text-btn">Clear</button>
+            </div>
+            <div id="history-list" class="history-list"></div>
+        </section>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
